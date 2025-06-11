@@ -9,7 +9,7 @@ public class ElevatorAppl {
     private static final int N_TRUCK = 10_000;
     private static final int N_RACES = 20;
     private static final int CAPACITY = 10;
-    private static final int ELEVATORS_AMOUNT = 3;
+    private static final int ELEVATORS_AMOUNT = 2;
 
     public static void main(String[] args) throws InterruptedException {
         long start = System.nanoTime(); /// Timer Start
@@ -23,7 +23,7 @@ public class ElevatorAppl {
         /// Preparing Trucks
         Truck[] trucks = new Truck[N_TRUCK];
         for (int i = 0; i < trucks.length; i++) {
-            trucks[i] = new Truck(N_RACES, CAPACITY, elevators);
+            trucks[i] = new Truck(i, N_RACES, CAPACITY, elevators);
         }
 
         ///  Starting process
